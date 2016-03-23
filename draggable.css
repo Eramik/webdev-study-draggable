@@ -1,0 +1,11 @@
+body {
+	background-image: url("background.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+#main {
+	margin: auto;
+	padding: 30px;
+	text-align: center;
+}

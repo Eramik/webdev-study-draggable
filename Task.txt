@@ -1,0 +1,28 @@
+Task
+1. Form basic page
+2. Place picture on page and place some div on top on it somewhere
+3. Make div draggable
+4. Study how to handle doubleclick
+5. Study how to add new div above picture with js
+6. Study how to place added picture directly at mouse position
+7. Make dynamic divs draggable
+8. Learn how to replace div contents with input on doubleclick and set its text to what was in doubleclicked div
+9. Check that doubleclick handle of container is not executed during doubleclick on our dynamic div
+10. Learn how to handle enter and escape keys on input
+11. Auto-focus on input when it appears
+12. Proper cursor (cursor: move) on our div
+13. If enter is clicked then apply changes and remove input
+14. If escape is clicked then do not apply changes, but remove input
+15. Add message "corner" at the bottom of each dynamic div, so it looks like "message bubble"
+16. Ensure long messages are supported correctly (and short too)
+17. Ensure no text is highlighted when double-clicking on container (image) or dynamic div
+18. Ensure that doubleclick handler of dynamic div is not executed when double-clicking on input
+19. Ensure that we're working with relative coordinates while placing our divs
+20. Ensure that dynamic draggable is not able to go over its parent
+21. Develop data storage model on server side (file containing json)
+22. Develop ability to get dynamic divs positions and text from server when page is loaded.
+23. Develop ability to save new text contents to server on dynamic div's input enter key press
+24. Same for deleting dynamic div by entering empty text
+25. Save new position of element when dragging is over
+26. Ensure all that works fine under chrome and firefox
+27. Ensure that update message transfers only neccessary info about some dynamic div, not the full array
