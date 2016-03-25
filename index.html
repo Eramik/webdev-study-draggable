@@ -4,12 +4,30 @@
 		<title>Draggable</title>
 		<meta charset="UTF-8" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="draggable.css">
+		<!--<link rel="stylesheet" type="text/css" href="draggable.css">-->
 	</head>
 	
 	<body>
 		<div id="main">
-			<img src="image.jpg" alt="image" height="470" width="698" border="1px" id="img" />
+			<img src="image.jpg" ondrop="drop(event)" ondragover="allowDrop(event)" alt="image" height="470" width="698" border="1px" id="img" />
+			<div draggable="true" id="drag1"  ondragstart="drag(event)" id="top"><p>Some text</p></div>
 		</div>
+		
+		<script>
+			preventDefault();
+			function drag(ev) {
+				ev.dataTransfer.setData("text", ev.target.id);
+			} 
+			function allowDrop(ev) {
+				ev.preventDefault();
+			}
+			function drop(ev) {
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("text");
+				ev.target.appendChild(document.getElementById(data));
+			}
+
+		</script>
+		
 	</body>
 </html>
