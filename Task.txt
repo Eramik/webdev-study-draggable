@@ -4,8 +4,8 @@ Task
 3. Make div draggable // done
 4. Study how to handle doubleclick // done
 5. Study how to add new div above picture with js // done
-6. Study how to place added picture directly at mouse position
-7. Make dynamic divs draggable
+6. Study how to place added picture directly at mouse position // done
+7. Make dynamic divs draggable // done
 8. Learn how to replace div contents with input on doubleclick and set its text to what was in doubleclicked div
 9. Check that doubleclick handle of container is not executed during doubleclick on our dynamic div
 10. Learn how to handle enter and escape keys on input

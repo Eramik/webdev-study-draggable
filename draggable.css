@@ -9,3 +9,12 @@
 	padding: 30px;
 	text-align: center;
 }
+
+#img {
+	z-index: -1;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}

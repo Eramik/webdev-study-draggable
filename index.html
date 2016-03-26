@@ -17,15 +17,15 @@
 		var id = 0;
 			$(document).ready(function(){
 				allDraggable();
-				$("img").click(function(){
+				$("img").click(function(event){
 					var div = document.createElement('div');
 					div.className = "draggable";
-					div.innerHTML = '<p id="' + id.toString() + '">HELLLOOOO WROLDLLDLD!</p>'
-					document.body.appendChild(div);
-					$( id.toString() ).css('position', "absolute");
-					$( id.toString() ).css('top', "300px");
-					$( id.toString() ).css('left', "500px");
-					$( id.toString() ).css('border', "1px solid black");
+					div.innerHTML = '<img id="' + id.toString() + '" border="0px" src="star.png" alt="star" width="28" height="28"/>'
+					document.body.insertBefore(div, document.body.firstChild);
+					$( "#" + id.toString() ).css('position', "absolute");
+					$( "#" + id.toString() ).css('top', event.pageY.toString() + "px");
+					$( "#" + id.toString() ).css('left', event.pageX.toString() + "px");
+					$( "#" + id.toString() ).css('border', "1px solid black");
 					allDraggable();
 					id++;
 				});
