@@ -1,0 +1,18 @@
+3. Make div draggable 
+http://www.wisdomweb.ru/JQ/ui.php
+
+4. Study how to handle doubleclick 
+.dblclick()
+
+https://learn.javascript.ru/coordinates
+
+5. Study how to add new div above picture with js
+https://learn.javascript.ru/modifying-document - all DOM functions
+http://stackoverflow.com/questions/6119315/how-do-i-add-an-image-to-an-element-using-javascript
+
+6. Study how to place added picture directly at mouse position
+http://stackoverflow.com/questions/4517198/how-to-get-mouse-position-in-jquery-without-mouse-events
+function(event) {
+    mouseX = event.pageX;
+    mouseY = event.pageY;
+}

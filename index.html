@@ -11,13 +11,30 @@
 	<body>
 		<div id="main">
 			<img src="image.jpg"  alt="image" height="470" width="698" border="1px" id="img" />
-			<div class="draggable" id="start"><p>Some text</p></div>
 		</div>
 		
 		<script>
+		var id = 0;
 			$(document).ready(function(){
-				$(".draggable").draggable();
+				allDraggable();
+				$("img").click(function(){
+					var div = document.createElement('div');
+					div.className = "draggable";
+					div.innerHTML = '<p id="' + id.toString() + '">HELLLOOOO WROLDLLDLD!</p>'
+					document.body.appendChild(div);
+					$( id.toString() ).css('position', "absolute");
+					$( id.toString() ).css('top', "300px");
+					$( id.toString() ).css('left', "500px");
+					$( id.toString() ).css('border', "1px solid black");
+					allDraggable();
+					id++;
+				});
 			});
+			
+			function allDraggable(){
+				$(".draggable").draggable();
+			}
+			
 		</script>
 		
 	</body>

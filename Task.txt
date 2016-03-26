@@ -1,9 +1,9 @@
 Task
-1. Form basic page
-2. Place picture on page and place some div on top on it somewhere
-3. Make div draggable
-4. Study how to handle doubleclick
-5. Study how to add new div above picture with js
+1. Form basic page // done
+2. Place picture on page and place some div on top on it somewhere // done
+3. Make div draggable // done
+4. Study how to handle doubleclick // done
+5. Study how to add new div above picture with js // done
 6. Study how to place added picture directly at mouse position
 7. Make dynamic divs draggable
 8. Learn how to replace div contents with input on doubleclick and set its text to what was in doubleclicked div
