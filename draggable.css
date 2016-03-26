@@ -1,8 +1,8 @@
-body {
+/*body {
 	background-image: url("background.jpg");
 	background-size: cover;
 	background-attachment: fixed;
-}
+}*/
 
 #main {
 	margin: auto;
@@ -10,7 +10,7 @@ body {
 	text-align: center;
 }
 
-#top {
+#start {
 	position: relative;
 	bottom: 300px;
 }
