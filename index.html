@@ -20,12 +20,13 @@
 				$("img").click(function(event){
 					var div = document.createElement('div');
 					div.className = "draggable";
-					div.innerHTML = '<img id="' + id.toString() + '" border="0px" src="star.png" alt="star" width="28" height="28"/>'
+					div.id  = id.toString();
 					document.body.insertBefore(div, document.body.firstChild);
 					$( "#" + id.toString() ).css('position', "absolute");
 					$( "#" + id.toString() ).css('top', event.pageY.toString() + "px");
 					$( "#" + id.toString() ).css('left', event.pageX.toString() + "px");
-					$( "#" + id.toString() ).css('border', "1px solid black");
+					$( "#" + id.toString() ).css('background-color', "white");
+					alert($( "#" + id.toString() ).css('position'));
 					allDraggable();
 					id++;
 				});
