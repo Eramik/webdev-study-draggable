@@ -21,14 +21,21 @@
 					var div = document.createElement('div');
 					div.className = "draggable";
 					div.id  = id.toString();
+					div.innerHTML = "hello";
 					document.getElementById("main").appendChild(div, document.body.firstChild);
 					$( "#" + id.toString() ).css('position', "absolute");
 					$( "#" + id.toString() ).css('top', event.pageY.toString() + "px");
 					$( "#" + id.toString() ).css('left', event.pageX.toString() + "px");
 					$( "#" + id.toString() ).css('background-color', "white");
+					$( "#" + id.toString() ).css('padding', "5px");
 					allDraggable();
 					id++;
 				});
+				
+				$(".draggable").dblclick(function(){
+					alert($(this).attr('id'));
+				});
+				
 			});
 			
 			function allDraggable(){
