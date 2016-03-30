@@ -9,31 +9,31 @@
 	</head>
 	
 	<body>
-		<div id="main">
-			<img src="image.jpg"  alt="image" height="470" width="698" border="1px" id="img" />
-		</div>
+		<main id="main"></main>
+		<section id="msgs"></section>
 		
 		<script>
 		var id = 0;
 			$(document).ready(function(){
 				allDraggable();
-				$("img").click(function(event){
+				$("main").click(function(event){
 					var div = document.createElement('div');
 					div.className = "draggable";
 					div.id  = id.toString();
 					div.innerHTML = "hello";
-					document.getElementById("main").appendChild(div, document.body.firstChild);
+					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					$( "#" + id.toString() ).css('position', "absolute");
 					$( "#" + id.toString() ).css('top', event.pageY.toString() + "px");
 					$( "#" + id.toString() ).css('left', event.pageX.toString() + "px");
 					$( "#" + id.toString() ).css('background-color', "white");
 					$( "#" + id.toString() ).css('padding', "5px");
+					$( "#" + id.toString() ).css('z-index', "5");
 					allDraggable();
 					id++;
 				});
 				
-				$(".draggable").dblclick(function(){
-					alert($(this).attr('id'));
+				$("div").dblclick(function(event){
+					alert("d");
 				});
 				
 			});

@@ -6,15 +6,10 @@
 
 #main {
 	margin: auto;
-	padding: 30px;
-	text-align: center;
-}
-
-#img {
-	z-index: -1;
-}
-
-div {
-	margin: 0px;
 	padding: 0px;
+	width: 698px;
+	height: 470px;
+	background-image: url("image.jpg");
+	background-size: contain;
+	border: 1px solid black;
 }
