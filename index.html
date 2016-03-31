@@ -10,12 +10,11 @@
 	
 	<body>
 		<main id="main"></main>
-		<section id="msgs"><div class="draggable ui-draggable ui-draggable-handle">hehe</div></section>
+		<section id="msgs"></section>
 		
 		<script>
 		var id = 0;
 			$(document).ready(function(){
-				allDraggable();
 				$("main").click(function(event){
 					var div = document.createElement('div');
 					div.className = "draggable";
@@ -28,19 +27,14 @@
 					$( "#" + id.toString() ).css('background-color', "white");
 					$( "#" + id.toString() ).css('padding', "5px");
 					$( "#" + id.toString() ).css('z-index', "5");
-					allDraggable();
+					$( "#" + id.toString() ).draggable().dblclick(function(event){
+						var txt = event.target.innerHTML;
+						event.target.innerHTML = "<input type='text' value ='" + txt + "'>"
+					});
 					id++;
 				});
 				
-				$(".draggable ui-draggable ui-draggable-handle").dblclick(function(event){
-					alert("d");
-				});
-				
 			});
-			
-			function allDraggable(){
-				$(".draggable").draggable();
-			}
 			
 		</script>
 		
