@@ -10,7 +10,7 @@
 	
 	<body>
 		<main id="main"></main>
-		<section id="msgs"></section>
+		<section id="msgs"><div class="draggable ui-draggable ui-draggable-handle">hehe</div></section>
 		
 		<script>
 		var id = 0;
@@ -32,7 +32,7 @@
 					id++;
 				});
 				
-				$("div").dblclick(function(event){
+				$(".draggable ui-draggable ui-draggable-handle").dblclick(function(event){
 					alert("d");
 				});
 				
