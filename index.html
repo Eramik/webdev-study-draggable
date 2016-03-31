@@ -27,12 +27,20 @@
 					$( "#" + id.toString() ).css('background-color', "white");
 					$( "#" + id.toString() ).css('padding', "5px");
 					$( "#" + id.toString() ).css('z-index', "5");
+					$( "#" + id.toString() ).attr("data-status", "text");
 					$( "#" + id.toString() ).draggable().dblclick(function(event){
+						if($("#" + event.target.id).attr("data-status") == "input")
+							return;
 						var txt = event.target.innerHTML;
-						event.target.innerHTML = "<input type='text' value ='" + txt + "'>"
+						event.target.innerHTML = "<input type='text' onkeypress='backToText(event)'  value ='" + txt + "'>";
+						$("#" + event.target.id).attr("data-status", "input");
 					});
 					id++;
 				});
+				
+				function backToText(event){
+					alert("works");
+				}
 				
 			});
 			
