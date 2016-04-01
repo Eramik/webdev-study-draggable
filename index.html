@@ -32,15 +32,17 @@
 						if($("#" + event.target.id).attr("data-status") == "input")
 							return;
 						var txt = event.target.innerHTML;
-						event.target.innerHTML = "<input type='text' onkeypress='backToText(event)'  value ='" + txt + "'>";
+						event.target.innerHTML = "<input type='text' value ='" + txt + "'>";
 						$("#" + event.target.id).attr("data-status", "input");
 					});
 					id++;
 				});
 				
-				function backToText(event){
-					alert("works");
-				}
+				$( "input" ).keypress(function( event ) {
+					if ( event.keyCode == 13 ) {
+						alert("Enter pressed");
+					}
+				});
 				
 			});
 			
