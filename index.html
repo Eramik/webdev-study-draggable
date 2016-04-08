@@ -23,8 +23,8 @@
 					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					$( "#" + id.toString() ).css({
 																'position' :  "absolute", 
-																'top' : event.pageY.toString() + "px", 
-																'left' : event.pageX.toString() + "px", 
+																'top' : (event.pageY.toString() + "px"), 
+																'left' : (event.pageX.toString() + "px"), 
 																'background-color' : "white", 
 																'padding' : "5px", 
 																'z-index' : "5"
@@ -34,8 +34,8 @@
 						if($("#" + event.target.id).attr("data-status") == "input")
 							return;
 						var txt = event.target.innerHTML;
-						event.target.innerHTML = "<input type='text' onkeypress='toText(event)' value ='" + txt + "'>";
-						$("#" + event.target.id).attr("data-status", "input");
+						event.target.innerHTML = "<input type='text' data-parent='" + event.target.id + "' onkeypress='toText(event)' value ='" + txt + "'>";
+						$("#" + event.target.id).attr("data-status" , "input");
 					});
 					id++;
 				});
@@ -44,7 +44,9 @@
 			
 			function toText(event){
 					if(event.keyCode == 13){
-						alert( $("div#" +  $(this).attr("id") + ":first-child").attr("value") );
+						$("#" + $(event.target).attr("data-parent") ).innerHTML = "<p>hello</p>" ;
+						$("#" + $(event.target).attr("data-parent") ).attr("data-status", "text");
+						//$(event.target).val() 
 					}
 				}
 		</script>
