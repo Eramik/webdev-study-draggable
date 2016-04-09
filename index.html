@@ -19,34 +19,46 @@
 					var div = document.createElement('div');
 					div.className = "draggable";
 					div.id  = id.toString();
-					div.innerHTML = "hello";
+					div.innerHTML = "Type some text here!";
 					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					$( "#" + id.toString() ).css({
-																'position' :  "absolute", 
 																'top' : (event.pageY.toString() + "px"), 
 																'left' : (event.pageX.toString() + "px"), 
-																'background-color' : "white", 
-																'padding' : "5px", 
-																'z-index' : "5"
 																});
 					$( "#" + id.toString() ).attr("data-status", "text");
 					$( "#" + id.toString() ).draggable().dblclick(function(event){
 						if($("#" + event.target.id).attr("data-status") == "input")
 							return;
 						var txt = event.target.innerHTML;
-						event.target.innerHTML = "<input type='text' data-parent='" + event.target.id + "' onkeypress='toText(event)' value ='" + txt + "'>";
+						event.target.innerHTML = "<input type='text' data-text='" + txt + "' data-parent='" + event.target.id + "' onkeydown='toText(event)' value ='" + txt + "'>";
 						$("#" + event.target.id).attr("data-status" , "input");
+						$( "input[data-parent='" + event.target.id + "']" ).focus();
+						$( "input[data-parent='" + event.target.id + "']" ).setCursorToTextEnd();
 					});
 					id++;
 				});
 
 			});
 			
+			(function($){
+				$.fn.setCursorToTextEnd = function() {
+					var $initialVal = this.val();
+					this.val($initialVal);
+				};
+			})(jQuery);
+			
 			function toText(event){
+					if( $(event.target).val() == "" ){
+						$("#" + $(event.target).attr("data-parent") ).remove();
+						return;
+					}
 					if(event.keyCode == 13){
-						$("#" + $(event.target).attr("data-parent") ).innerHTML = "<p>hello</p>" ;//$(event.target).val() 
+						$("#" + $(event.target).attr("data-parent") ).html( $(event.target).val() );
 						$("#" + $(event.target).attr("data-parent") ).attr("data-status", "text");
-						
+					}
+					else if(event.keyCode == 27){
+						$("#" + $(event.target).attr("data-parent") ).html( $(event.target).attr("data-text") );
+						$("#" + $(event.target).attr("data-parent") ).attr("data-status", "text");
 					}
 				}
 		</script>

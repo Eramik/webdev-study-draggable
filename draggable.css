@@ -13,3 +13,27 @@
 	background-size: contain;
 	border: 1px solid black;
 }
+
+input {
+    width: 95%;
+}
+
+div {
+	background-color: white;
+	position: absolute;
+	width: 100px;
+	padding: 5px;
+	z-index: 5px;
+	text-align: center;
+	overflow: hidden;
+}
+
+div:after {
+	content: " ";
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+}
