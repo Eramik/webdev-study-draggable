@@ -13,7 +13,7 @@ Task
 12. Proper cursor (cursor: move) on our div // done
 13. If enter is clicked then apply changes and remove input // done
 14. If escape is clicked then do not apply changes, but remove input // done
-15. Add message "corner" at the bottom of each dynamic div, so it looks like "message bubble" // done
+15. Add message "corner" at the bottom of each dynamic div, so it looks like "message bubble"
 16. Ensure long messages are supported correctly (and short too) 
 17. Ensure no text is highlighted when double-clicking on container (image) or dynamic div
 18. Ensure that doubleclick handler of dynamic div is not executed when double-clicking on input
