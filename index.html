@@ -44,9 +44,9 @@
 			
 			function toText(event){
 					if(event.keyCode == 13){
-						$("#" + $(event.target).attr("data-parent") ).innerHTML = "<p>hello</p>" ;
+						$("#" + $(event.target).attr("data-parent") ).innerHTML = "<p>hello</p>" ;//$(event.target).val() 
 						$("#" + $(event.target).attr("data-parent") ).attr("data-status", "text");
-						//$(event.target).val() 
+						
 					}
 				}
 		</script>
