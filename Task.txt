@@ -14,10 +14,10 @@ Task
 13. If enter is clicked then apply changes and remove input // done
 14. If escape is clicked then do not apply changes, but remove input // done
 15. Add message "corner" at the bottom of each dynamic div, so it looks like "message bubble" // done
-16. Ensure long messages are supported correctly (and short too) 
-17. Ensure no text is highlighted when double-clicking on container (image) or dynamic div
-18. Ensure that doubleclick handler of dynamic div is not executed when double-clicking on input
-19. Ensure that we're working with relative coordinates while placing our divs
+16. Ensure long messages are supported correctly (and short too) // done
+17. Ensure no text is highlighted when double-clicking on container (image) or dynamic div // done
+18. Ensure that doubleclick handler of dynamic div is not executed when double-clicking on input // done
+19. Ensure that we're working with relative coordinates while placing our divs 
 20. Ensure that dynamic draggable is not able to go over its parent
 21. Develop data storage model on server side (file containing json)
 22. Develop ability to get dynamic divs positions and text from server when page is loaded.
