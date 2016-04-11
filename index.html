@@ -9,10 +9,10 @@
 	</head>
 	
 	<body>
-		<section id="thisbody">
-			<main id="main"></main>
-			<section id="msgs"></section>
-		<section>
+			
+			<section id="msgs">
+				<main id="main"></main>
+			</section>
 		
 		<script>
 		var id = 0;
@@ -30,7 +30,7 @@
 																'left' : ( (event.pageX - offset.left) + "px"), 
 																});
 					div.attr("data-status", "text");
-					div.draggable().dblclick(function(event){
+					div.draggable({containment: "parent"}).dblclick(function(event){
 						if($("#" + event.target.id).attr("data-status") == "input")
 							return;
 						var txt = event.target.innerHTML;

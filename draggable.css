@@ -5,7 +5,7 @@
 }*/
 
 #main {
-	margin: auto;
+	margin: 0;
 	padding: 0px;
 	width: 698px;
 	height: 470px;
@@ -14,9 +14,10 @@
 	border: 1px solid black;
 }
 
-#thisbody {
-	width: 699px;
-	height: 471px;
+#msgs {
+	width: 700px;
+	margin: auto;
+	padding: 0px;
 }
 
 input {
@@ -27,6 +28,7 @@ div {
     position: relative;
     width: 100px;
     padding: 5px;
+	margin: 0px;
     background: #ffffff;
 	text-align: center;
 }

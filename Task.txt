@@ -18,7 +18,7 @@ Task
 17. Ensure no text is highlighted when double-clicking on container (image) or dynamic div // done
 18. Ensure that doubleclick handler of dynamic div is not executed when double-clicking on input // done
 19. Ensure that we're working with relative coordinates while placing our divs  // done
-20. Ensure that dynamic draggable is not able to go over its parent
+20. Ensure that dynamic draggable is not able to go over its parent // done
 21. Develop data storage model on server side (file containing json)
 22. Develop ability to get dynamic divs positions and text from server when page is loaded.
 23. Develop ability to save new text contents to server on dynamic div's input enter key press
