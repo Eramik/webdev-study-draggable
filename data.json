@@ -1,0 +1,6 @@
+{
+	"messages":
+	[
+		{ "id": 0, "class":"draggable ui-draggable ui-draggable-handle"}
+	]
+}
