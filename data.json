@@ -1,6 +1,6 @@
 {
 	"messages":
 	[
-		{ "id": 0, "class":"draggable ui-draggable ui-draggable-handle"}
+		{ "text":"Type here something!", "top": "-325px", "left": "354.5px"}
 	]
 }
