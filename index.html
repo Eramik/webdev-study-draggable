@@ -9,7 +9,7 @@
 	</head>
 	
 	<body>
-		<section>
+		<section id="thisbody">
 			<main id="main"></main>
 			<section id="msgs"></section>
 		<section>
@@ -24,15 +24,11 @@
 					div.innerHTML = "Type some text here!";
 					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					div = $( "#" + id.toString() );
-					/*$( "#" + id.toString() ).css({
-																'top' : (event.pageY.toString() + "px"), 
-																'left' : (event.pageX.toString() + "px"), 
-																});*/
-					//
-					var position = div.position();
 					var offset = div.offset();
-					console.log("position top: " + position.top);
-					//
+					div.css({
+																'top' : ( (event.pageY - offset.top) + "px"), 
+																'left' : ( (event.pageX - offset.left) + "px"), 
+																});
 					div.attr("data-status", "text");
 					div.draggable().dblclick(function(event){
 						if($("#" + event.target.id).attr("data-status") == "input")

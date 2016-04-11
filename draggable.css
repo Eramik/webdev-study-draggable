@@ -14,13 +14,17 @@
 	border: 1px solid black;
 }
 
+#thisbody {
+	width: 699px;
+	height: 471px;
+}
+
 input {
     width: 95%;
 }
 
 div {
-    /*position: relative;*/
-	position: absolute;
+    position: relative;
     width: 100px;
     padding: 5px;
     background: #ffffff;
