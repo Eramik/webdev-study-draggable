@@ -48,11 +48,11 @@
 			})(jQuery);
 			
 			function toText(event){
-					if( $(event.target).val() == "" ){
-						$("#" + $(event.target).attr("data-parent") ).remove();
-						return;
-					}
 					if(event.keyCode == 13){
+						if( $(event.target).val() == "" ){
+							$("#" + $(event.target).attr("data-parent") ).remove();
+							return;
+						}
 						$("#" + $(event.target).attr("data-parent") ).html( $(event.target).val() );
 						$("#" + $(event.target).attr("data-parent") ).attr("data-status", "text");
 					}
