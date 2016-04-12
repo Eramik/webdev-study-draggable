@@ -61,6 +61,13 @@
 																'left' : ( (event.pageX - offset.left) + "px")
 																});
 					div.attr("data-status", "text");
+					$.ajax({
+						  method: "POST",
+						  url: "draggable.php",
+						  data: {"id" : -1,  "text" : "Type some text here!", "top" : (event.pageY - offset.top), "left" :  (event.pageX - offset.left)}
+						})
+						  .done(function( data ) {
+						});
 					div.draggable({containment: "parent"}).dblclick(function(event){
 						if($("#" + event.target.id).attr("data-status") == "input")
 							return;
