@@ -24,8 +24,15 @@
 				  data: { }
 				})
 				  .done(function( data ) {
-					id = data.messages[data.messages.length-1].id +1;
+				  if(data.messages.length == 0){
+						return;
+					}
+					else{
+					id = parseInt(data.messages[data.messages.length-1].id) +1;
 					for(var i = 0; i < data.messages.length; i++){
+						if(data.messages[i] == null){
+							continue;
+						}
 						var div = document.createElement('div');
 						div.id = data.messages[i].id;
 						div.innerHTML = data.messages[i].text;
@@ -40,7 +47,7 @@
 							$.ajax({
 							  method: "POST",
 							  url: "draggable.php",
-							  data: {"id" : div.attr("id"),  "text" : "Type some text here!", "top" : div.css("top"), "left" :  div.css("left")}
+							  data: {"id" : div.attr("id"), "top" : div.css("top"), "left" :  div.css("left")}
 							})
 							.done(function( data ) {
 							});
@@ -54,8 +61,9 @@
 						$( "input[data-parent='" + event.target.id + "']" ).focus();
 						$( "input[data-parent='" + event.target.id + "']" ).setCursorToTextEnd();
 						});
-					}
+					}}
 				});
+				
 				
 			
 				$("main").click(function(event){
@@ -74,7 +82,7 @@
 							$.ajax({
 							  method: "POST",
 							  url: "draggable.php",
-							  data: {"id" : div.attr("id"),  "text" : "Type some text here!", "top" : div.css("top"), "left" :  div.css("left")}
+							  data: {"id" : div.attr("id"), "top" : div.css("top"), "left" :  div.css("left")}
 							})
 							.done(function( data ) {
 							});
@@ -82,7 +90,7 @@
 					$.ajax({
 						  method: "POST",
 						  url: "draggable.php",
-						  data: {"id" : div.id,  "text" : "Type some text here!", "top" : div.css("top"), "left" :  div.css("left"), "type" : "create"}
+						  data: {"id" : div.id.toString(),  "text" : "Type some text here!", "top" : div.css("top"), "left" :  div.css("left"), "type" : "create"}
 					})
 					.done(function( data ) {
 					});
@@ -125,7 +133,7 @@
 						$.ajax({
 						  method: "POST",
 						  url: "draggable.php",
-						  data: {"id" : $(event.target).attr("data-parent"),  "text" : $(event.target).val(), "top" : "no", "left" : "no"}
+						  data: {"id" : $(event.target).attr("data-parent"),  "text" : $(event.target).val()}
 						})
 						.done(function( data ) {
 						});
