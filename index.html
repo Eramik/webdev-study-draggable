@@ -81,7 +81,7 @@
 							$.ajax({
 							  method: "POST",
 							  url: "draggable.php",
-							  data: {"id" : div.attr("id"), "top" : div.css("top"), "left" :  div.css("left"), "case" : "newpos"}
+							  data: {"id" : $(this).attr("id"), "top" : $(this).css("top"), "left" :  $(this).css("left"), "case" : "newpos"}
 							})
 							.done(function( data ) {
 							});
