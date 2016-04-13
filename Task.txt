@@ -22,7 +22,7 @@ Task
 21. Develop data storage model on server side (file containing json) // done
 22. Develop ability to get dynamic divs positions and text from server when page is loaded. // done
 23. Develop ability to save new text contents to server on dynamic div's input enter key press // done
-24. Same for deleting dynamic div by entering empty text
+24. Same for deleting dynamic div by entering empty text // done
 25. Save new position of element when dragging is over // done
 26. Ensure all that works fine under chrome and firefox
 27. Ensure that update message transfers only neccessary info about some dynamic div, not the full array

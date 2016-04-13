@@ -46,7 +46,9 @@
 		for($i = $id; $i < count($data["messages"]) - 1; $i++){
 			$data["messages"][$i] = $data["messages"][$i + 1];
 		}
-		unset($data["messages"][$i + 1]);
+		unset($data["messages"][$i]);
+		$x = json_encode($data);
+		file_put_contents("data.json", $x);
 	}
 	else{ 
 		echo "<p><b>Error</b>: unknown case!</p>";
