@@ -66,16 +66,16 @@
 				
 			});
 			
-				$("msgs").on("click", function(event){
+				$("main").on("click", function(event){
+					console.log("works");
 					var div = document.createElement('div');
 					div.id  = id.toString();
 					div.innerHTML = "Type some text here!";
 					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					div = $( "#" + id.toString() );
-					var parentOffset = $("#msgs").offset();
 					div.css({
-								'top' : ( (event.pageY - parentOffset.top) + "px"), 
-								'left' : ( (event.pageX - parentOffset.top) + "px")
+								'top' :  event.pageY + "px", 
+								'left' : event.pageX + "px"
 					});
 					div.attr("data-status", "text");
 					
@@ -89,11 +89,12 @@
 							.done(function( data ) {
 							});
 					});
+					var parentOffset = $("#msgs").offset();
 					
 					$.ajax({
 						  method: "POST",
 						  url: "draggable.php",
-						  data: {"id" : id,  "text" : "Type some text here!", "top" : div.css("top"), "left" :  div.css("left"), "case" : "create"}
+						  data: {"id" : id,  "text" : "Type some text here!", "top" : parseInt(div.css("top")) - parentOffset.top + "px", "left" :  parseInt(div.css("left")) - parentOffset.left + "px", "case" : "create"}
 					})
 					.done(function( data ) {
 					});
