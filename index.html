@@ -64,9 +64,9 @@
 					}}
 				});
 				
-				
+			});
 			
-				$("main").click(function(event){
+				$("msgs").on("click", function(event){
 					var div = document.createElement('div');
 					div.id  = id.toString();
 					div.innerHTML = "Type some text here!";
@@ -74,8 +74,8 @@
 					div = $( "#" + id.toString() );
 					var parentOffset = $("#msgs").offset();
 					div.css({
-								'top' : ( (parentOffset.top - event.pageY) + "px"), 
-								'left' : ( (parentOffset.top - event.pageX) + "px")
+								'top' : ( (event.pageY - parentOffset.top) + "px"), 
+								'left' : ( (event.pageX - parentOffset.top) + "px")
 					});
 					div.attr("data-status", "text");
 					
@@ -108,8 +108,6 @@
 					});
 					id++;
 				});
-
-			});
 			
 			(function($){
 				$.fn.setCursorToTextEnd = function() {
