@@ -36,19 +36,21 @@
 						div.innerHTML = data.messages[i].text;
 						document.getElementById("msgs").appendChild(div, document.body.firstChild);
 						div = $( "#" + i.toString() );
+						var parentOffset = $("#msgs").offset();
 						div.css({
-								'top' : data.messages[i].top,
-								'left' : data.messages[i].left
+								'top' : (parseInt(data.messages[i].top) + parentOffset.top) + "px",
+								'left' : (parseInt(data.messages[i].left) + parentOffset.left) + "px",
 							});
 						div.attr("data-status", "text");
 						div.mouseup( function(){
-							$.ajax({
-							  method: "POST",
-							  url: "draggable.php",
-							  data: {"id" : $(this).attr("id"), "top" : $(this).css("top"), "left" :  $(this).css("left"), "case" : "newpos"}
-							})
-							.done(function( data ) {
-							});
+						var parentOffset = $("#msgs").offset();
+								$.ajax({
+								  method: "POST",
+								  url: "draggable.php",
+								  data: {"id" : $(this).attr("id"), "top" : parseInt($(this).css("top")) - parentOffset.top + "px", "left" :  parseInt($(this).css("left")) - parentOffset.left + "px", "case" : "newpos"}
+								})
+								.done(function( data ) {
+								});
 						});
 						div.draggable({containment: "parent"}).dblclick(function(event){
 						if($("#" + event.target.id).attr("data-status") == "input")
@@ -70,18 +72,19 @@
 					div.innerHTML = "Type some text here!";
 					document.getElementById("msgs").appendChild(div, document.body.firstChild);
 					div = $( "#" + id.toString() );
-					var offset = div.offset();
+					var parentOffset = $("#msgs").offset();
 					div.css({
-								'top' : ( (event.pageY - offset.top) + "px"), 
-								'left' : ( (event.pageX - offset.left) + "px")
-							});
+								'top' : ( (parentOffset.top - event.pageY) + "px"), 
+								'left' : ( (parentOffset.top - event.pageX) + "px")
+					});
 					div.attr("data-status", "text");
 					
 					div.mouseup( function(){
+					var parentOffset = $("#msgs").offset();
 							$.ajax({
 							  method: "POST",
 							  url: "draggable.php",
-							  data: {"id" : $(this).attr("id"), "top" : $(this).css("top"), "left" :  $(this).css("left"), "case" : "newpos"}
+							  data: {"id" : $(this).attr("id"), "top" : parseInt($(this).css("top")) - parentOffset.top + "px", "left" :  parseInt($(this).css("left")) - parentOffset.left + "px", "case" : "newpos"}
 							})
 							.done(function( data ) {
 							});

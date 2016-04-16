@@ -25,4 +25,4 @@ Task
 24. Same for deleting dynamic div by entering empty text // done
 25. Save new position of element when dragging is over // done
 26. Ensure all that works fine under chrome and firefox
-27. Ensure that update message transfers only neccessary info about some dynamic div, not the full array
+27. Ensure that update message transfers only neccessary info about some dynamic div, not the full array // done
